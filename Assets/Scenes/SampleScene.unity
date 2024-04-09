@@ -324,7 +324,7 @@ Transform:
   m_GameObject: {fileID: 396767706}
   m_LocalRotation: {x: -0.00000003449481, y: -0.6930275, z: 0.7209112, w: -0.000000084745956}
   m_LocalPosition: {x: -0.0028191507, y: 0.39, z: 0.2656898}
-  m_LocalScale: {x: 0.76135, y: 0.3490352, z: 0.4932101}
+  m_LocalScale: {x: 0.884088, y: 0.3490352, z: 0.4932101}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 984774372}
@@ -711,6 +711,7 @@ MonoBehaviour:
   playerSpeed: 2
   jumpHeight: 1
   gravityValue: -9.81
+  rotationSpeed: 5
 --- !u!143 &984774375
 CharacterController:
   m_ObjectHideFlags: 0

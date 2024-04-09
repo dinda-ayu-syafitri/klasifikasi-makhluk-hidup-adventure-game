@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float jumpHeight = 1.0f;
     [SerializeField]
     private float gravityValue = -9.81f;
+    [SerializeField]
+    private float rotationSpeed = 5f;
 
     private CharacterController controller;
     private PlayerInput playerInput;
@@ -51,5 +53,10 @@ private InputAction moveAction;
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        // Rotate the player to the direction of movement
+        float targetAngle = cameraTransform.eulerAngles.y;
+        Quaternion rotation = Quaternion.Euler(0, targetAngle, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
 }
