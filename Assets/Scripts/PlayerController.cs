@@ -15,14 +15,16 @@ public class PlayerController : MonoBehaviour
     private PlayerInput playerInput;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
+    private Transform cameraTransform;
 
 private InputAction moveAction;
-private InputAction jumpAction;
+    private InputAction jumpAction;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
+        cameraTransform = Camera.main.transform;
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
     }
@@ -37,6 +39,8 @@ private InputAction jumpAction;
 
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
+        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        move.y = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
         // Changes the height position of the player..
