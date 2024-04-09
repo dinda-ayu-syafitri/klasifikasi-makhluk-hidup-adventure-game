@@ -17,7 +17,7 @@ public class PlayerScript : MonoBehaviour
             instance = this;
         }
         DontDestroyOnLoad(gameObject);
-        DontDestroyOnLoad(Camera.main.gameObject);
+        // DontDestroyOnLoad(Camera.main.gameObject);
 
     }
 

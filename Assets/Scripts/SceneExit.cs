@@ -6,10 +6,14 @@ using UnityEngine.SceneManagement;
 public class SceneExit : MonoBehaviour
 {
     public string sceneToLoad;
+    public string lastExitScene;
 
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene(sceneToLoad);
+        if(other.gameObject.CompareTag("Player")){
+            PlayerPrefs.SetString("LastScene", lastExitScene);
+            SceneManager.LoadScene(sceneToLoad);
+        }
 
     }
 }
