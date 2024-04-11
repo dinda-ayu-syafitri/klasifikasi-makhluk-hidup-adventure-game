@@ -5,8 +5,12 @@ using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Config")]
+    [SerializeField] private string fileName = "";
+
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
     public static DataPersistenceManager instance { get; private set; }
 
     private void Awake()
@@ -18,7 +22,9 @@ public class DataPersistenceManager : MonoBehaviour
         instance = this;
     }
 
-    private void Start() {
+    private void Start()
+    {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
@@ -30,6 +36,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
+        this.gameData = dataHandler.Load();
         if (this.gameData == null)
         {
             Debug.Log("Game data dont exists.");
@@ -41,20 +48,20 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObject.LoadData(gameData);
         }
 
-        Debug.Log("Game data loaded." + gameData.totalPoints + " points and " + gameData.emblemCollected + " emblems.");
     }
 
     public void SaveGame()
     {
-foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
+        foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(gameData);
         }
 
-        Debug.Log("Game data saved." + gameData.totalPoints + " points and " + gameData.emblemCollected + " emblems.");
-    } 
+        dataHandler.Save(gameData);
+    }
 
-    private void OnApplicationQuit() {
+    private void OnApplicationQuit()
+    {
         SaveGame();
     }
 
