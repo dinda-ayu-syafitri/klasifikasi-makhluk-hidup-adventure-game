@@ -14,6 +14,6 @@ public class GameData
     {
         this.totalPoints = 0;
         this.emblemCollected = 0;
-        this.playerPosition = new Vector3(20f, 4.5f, -53f);
+        this.playerPosition = new Vector3(0f, 1.1f, 0f);
     }
 }
