@@ -17,6 +17,7 @@ public class Emblem : MonoBehaviour
    {
        collected = true;
        Destroy(gameObject);
+       GameEventManager.instance.EmblemCollected();
        print("Emblem collected!");
    }
 }
