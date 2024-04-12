@@ -484,6 +484,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: id
+      value: 1fab4359-5f70-487d-b4f5-8b930623e257
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
 --- !u!1 &396767706
@@ -765,6 +769,10 @@ PrefabInstance:
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: id
+      value: 3cb9dcef-6500-4dc9-8929-62caa09e3023
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
@@ -1430,6 +1438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: gameData
+  useEncryption: 1
 --- !u!1 &1565474430
 GameObject:
   m_ObjectHideFlags: 0
@@ -1700,6 +1709,10 @@ PrefabInstance:
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: id
+      value: 6f0ed4bb-3dec-480f-9ca6-f2d9232dc4ca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
