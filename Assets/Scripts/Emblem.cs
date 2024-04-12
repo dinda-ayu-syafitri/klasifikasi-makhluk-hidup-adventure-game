@@ -43,6 +43,5 @@ public class Emblem : MonoBehaviour, IDataPersistence
        collected = true;
        Destroy(gameObject);
        GameEventManager.instance.EmblemCollected();
-       print("Emblem collected!");
    }
 }

@@ -42,8 +42,8 @@ public class PointsText : MonoBehaviour, IDataPersistence
     {
         emblemCollected++;
         totalPoints += 100;
-        Debug.Log("Points: " + totalPoints);
-        Debug.Log("Emblems: " + emblemCollected);
+        // Debug.Log("Points: " + totalPoints);
+        // Debug.Log("Emblems: " + emblemCollected);
     }
     // Update is called once per frame
     void Update()

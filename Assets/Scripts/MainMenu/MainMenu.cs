@@ -10,6 +10,13 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button continueButton;
 
+    private void Start()
+    {
+        if (!DataPersistenceManager.instance.HasGameData())
+        {
+            continueButton.interactable = false;
+        }
+    }
     public void OnNewGameClicked()
     {
         DisableMenuButtons();

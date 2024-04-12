@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class DataPersistenceManager : MonoBehaviour
 {
-    [Header("File Storage Config")]
+    [Header("Debugging")]
+    [SerializeField] private bool initializeDataIfNull = false;
+    
     [SerializeField] private string fileName = "";
     [SerializeField] private bool useEncryption;
 
@@ -61,6 +63,11 @@ public class DataPersistenceManager : MonoBehaviour
     {
         this.gameData = dataHandler.Load();
 
+        if (this.gameData == null && initializeDataIfNull)
+        {
+            NewGame();
+        }
+
         if (this.gameData == null)
         {
             Debug.Log("Game data dont exists.");
@@ -99,5 +106,10 @@ public class DataPersistenceManager : MonoBehaviour
         IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
+    }
+
+    public bool HasGameData()
+    {
+        return this.gameData != null;
     }
 }
