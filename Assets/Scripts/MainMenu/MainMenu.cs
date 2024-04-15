@@ -27,7 +27,8 @@ public class MainMenu : MonoBehaviour
     {
         DisableMenuButtons();
         // DataPersistenceManager.instance.SaveGame();
-        SceneManager.LoadSceneAsync("Lobby");
+        // SceneManager.LoadSceneAsync("Lobby");
+        SceneManager.LoadSceneAsync(DataPersistenceManager.instance.GetSavedSceneName());
     }
 
     private void DisableMenuButtons()

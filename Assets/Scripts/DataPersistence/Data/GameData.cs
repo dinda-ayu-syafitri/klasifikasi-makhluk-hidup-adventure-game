@@ -10,6 +10,7 @@ public class GameData
     public int emblemCollected;
     public Vector3 playerPosition;
     public SerializableDictionary<string, bool> emblemItemCollected;
+    public string currentScene;
 
     public GameData()
     {
@@ -17,5 +18,6 @@ public class GameData
         this.emblemCollected = 0;
         this.playerPosition = new Vector3(0f, 1.1f, 0f);
         this.emblemItemCollected = new SerializableDictionary<string, bool>();
+        this.currentScene = "Lobby";
     }
 }

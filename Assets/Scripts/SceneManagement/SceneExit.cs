@@ -10,7 +10,8 @@ public class SceneExit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player")){
+        if (other.gameObject.CompareTag("Player"))
+        {
             PlayerPrefs.SetString("LastScene", lastExitScene);
             SceneManager.LoadScene(sceneToLoad);
         }

@@ -716,8 +716,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1060406507051749195, guid: cb3f665e77aed40489d79e5b2ababb8c, type: 3}
+      propertyPath: useEncryption
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1060406507051749195, guid: cb3f665e77aed40489d79e5b2ababb8c, type: 3}
       propertyPath: initializeDataIfNull
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1060406507051749196, guid: cb3f665e77aed40489d79e5b2ababb8c, type: 3}
       propertyPath: m_RootOrder

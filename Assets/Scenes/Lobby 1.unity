@@ -1236,7 +1236,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1c38313d689594ab6955fa6c7b4f2f80, type: 2}
+  - {fileID: 2100000, guid: f515eb6bcc8a64d74a699b1427f7cdf6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1372,7 +1372,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396865385}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.88, y: 4.69, z: 17.4}
+  m_LocalPosition: {x: -2.1, y: 4.69, z: 17.4}
   m_LocalScale: {x: 5.976397, y: 8.8395195, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1391,7 +1391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ccf30ce1cf2e4f30be0123ab3e0a0dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Lobby 1
+  sceneToLoad: Video Materi 1
   lastExitScene: 
 --- !u!4 &1450420123 stripped
 Transform:
