@@ -8,13 +8,14 @@ public class DataPersistenceManager : MonoBehaviour
 {
     [Header("Debugging")]
     [SerializeField] private bool initializeDataIfNull = false;
-    
-    [SerializeField] private string fileName = "";
+
+    [SerializeField] private string fileName;
     [SerializeField] private bool useEncryption;
 
     private GameData gameData;
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
+
     public static DataPersistenceManager instance { get; private set; }
 
     private void Awake()
@@ -27,6 +28,7 @@ public class DataPersistenceManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(this.gameObject);
+
         this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName, useEncryption);
 
     }
@@ -34,11 +36,13 @@ public class DataPersistenceManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -47,9 +51,15 @@ public class DataPersistenceManager : MonoBehaviour
         LoadGame();
     }
 
+    public void OnSceneUnloaded(Scene scene)
+    {
+        SaveGame();
+    }
+
     public void NewGame()
     {
         this.gameData = new GameData();
+        Debug.Log("New game created.");
     }
 
     public void LoadGame()
@@ -103,6 +113,6 @@ public class DataPersistenceManager : MonoBehaviour
 
     public bool HasGameData()
     {
-        return this.gameData != null;
+        return gameData != null;
     }
 }
