@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController), typeof(PlayerInput))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IDataPersistence
 {
     [SerializeField]
     private float playerSpeed = 2.0f;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     private bool groundedPlayer;
     private Transform cameraTransform;
 
-private InputAction moveAction;
+    private InputAction moveAction;
     private InputAction jumpAction;
 
     private void Start()
@@ -29,6 +29,16 @@ private InputAction moveAction;
         cameraTransform = Camera.main.transform;
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+    }
+
+    public void LoadData(GameData gameData)
+    {
+        this.transform.localPosition = gameData.playerPosition;
+    }
+
+    public void SaveData(GameData gameData)
+    {
+        gameData.playerPosition = this.transform.localPosition;
     }
 
     void Update()

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class PointsText : MonoBehaviour
+public class PointsText : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private int totalPoints = 0;
 
@@ -14,6 +14,18 @@ public class PointsText : MonoBehaviour
     private void Awake()
     {
         pointsText = this.GetComponent<TextMeshProUGUI>();
+    }
+
+    public void LoadData(GameData data)
+    {
+        this.totalPoints = data.totalPoints;
+        this.emblemCollected = data.emblemCollected;
+    }
+
+    public void SaveData(GameData data)
+    {
+        data.totalPoints = this.totalPoints;
+        data.emblemCollected = this.emblemCollected;
     }
     // Start is called before the first frame update
     void Start()
@@ -30,8 +42,8 @@ public class PointsText : MonoBehaviour
     {
         emblemCollected++;
         totalPoints += 100;
-        Debug.Log("Points: " + totalPoints);
-        Debug.Log("Emblems: " + emblemCollected);
+        // Debug.Log("Points: " + totalPoints);
+        // Debug.Log("Emblems: " + emblemCollected);
     }
     // Update is called once per frame
     void Update()
