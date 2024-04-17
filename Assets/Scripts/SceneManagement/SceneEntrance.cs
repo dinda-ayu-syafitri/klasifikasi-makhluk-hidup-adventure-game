@@ -12,6 +12,8 @@ public class SceneEntrance : MonoBehaviour
         if (PlayerPrefs.GetString("LastScene") == lastExitScene)
         {
             PlayerScript.instance.transform.position = transform.position;
+            Debug.Log("Player position: " + PlayerScript.instance.transform.position);
+            Debug.Log("Entrance position: " + transform.position);
             PlayerScript.instance.transform.eulerAngles = transform.eulerAngles;
         }
     }

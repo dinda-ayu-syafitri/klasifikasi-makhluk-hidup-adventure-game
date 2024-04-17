@@ -34,8 +34,9 @@ public class MainMenu : Menu
     public void OnContinueGame()
     {
         DisableMenuButtons();
-        // DataPersistenceManager.instance.SaveGame();
+        DataPersistenceManager.instance.SaveGame();
         // SceneManager.LoadSceneAsync("Lobby");
+
         SceneManager.LoadSceneAsync(DataPersistenceManager.instance.GetSavedSceneName());
     }
 

@@ -33,6 +33,8 @@ public class SaveSlotsMenu : Menu
             DataPersistenceManager.instance.NewGame();
         }
 
+        DataPersistenceManager.instance.SaveGame();
+
         SceneManager.LoadSceneAsync(DataPersistenceManager.instance.GetSavedSceneName());
     }
 
@@ -50,6 +52,8 @@ public class SaveSlotsMenu : Menu
 
         Dictionary<string, GameData> profilesGameData = DataPersistenceManager.instance.GetAllProfilesGameData();
 
+        GameObject firstSelected = backButton.gameObject;
+
         foreach (SaveSlot saveSlot in saveSlots)
         {
             GameData profileData = null;
@@ -63,9 +67,15 @@ public class SaveSlotsMenu : Menu
             else
             {
                 saveSlot.SetInteractable(true);
+                if (firstSelected.Equals(backButton.gameObject))
+                {
+                    firstSelected = saveSlot.gameObject;
+                }
             }
 
         }
+
+        StartCoroutine(this.SetFirstSelected(firstSelected));
     }
 
     public void DeactivateMenu()
