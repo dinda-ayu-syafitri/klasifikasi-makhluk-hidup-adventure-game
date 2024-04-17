@@ -16,6 +16,12 @@ public class DataPersistenceManager : MonoBehaviour
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
+    private PlayerController playerController;
+    private string selectedProfileId = "test";
+
+    public string currentScene;
+
+
     public static DataPersistenceManager instance { get; private set; }
 
     private void Awake()
@@ -36,35 +42,56 @@ public class DataPersistenceManager : MonoBehaviour
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
+        // SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+        // SceneManager.sceneUnloaded -= OnSceneUnloaded;
     }
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerController = playerObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                // Debug.Log("PlayerController component found and assigned.");
+                LoadGame(); // Load game data after player controller is assigned
+            }
+
+        }
+
+
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
+        this.currentScene = SceneManager.GetActiveScene().name;
+
         LoadGame();
     }
 
-    public void OnSceneUnloaded(Scene scene)
+    // public void OnSceneUnloaded(Scene scene)
+    // {
+    //     SaveGame();
+    // }
+
+    public void ChangeSelectedProfileId(string newProfileId)
     {
-        SaveGame();
+        this.selectedProfileId = newProfileId;
+
+        LoadGame();
     }
 
     public void NewGame()
     {
         this.gameData = new GameData();
-        Debug.Log("New game created.");
     }
 
     public void LoadGame()
     {
-        this.gameData = dataHandler.Load();
+        this.gameData = dataHandler.Load(selectedProfileId);
 
         if (this.gameData == null && initializeDataIfNull)
         {
@@ -91,12 +118,19 @@ public class DataPersistenceManager : MonoBehaviour
             Debug.Log("Game data is null.");
             return;
         }
+
         foreach (IDataPersistence dataPersistenceObject in dataPersistenceObjects)
         {
             dataPersistenceObject.SaveData(gameData);
         }
 
-        dataHandler.Save(gameData);
+
+        if (!currentScene.Equals("Main Menu"))
+        {
+            this.gameData.currentScene = this.currentScene;
+        }
+
+        dataHandler.Save(gameData, selectedProfileId);
     }
 
     private void OnApplicationQuit()
@@ -106,7 +140,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true).OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
     }
@@ -114,5 +148,23 @@ public class DataPersistenceManager : MonoBehaviour
     public bool HasGameData()
     {
         return gameData != null;
+    }
+
+    public string GetSavedSceneName()
+    {
+        // error out and return null if we don't have any game data yet
+        if (gameData == null)
+        {
+            Debug.LogError("Tried to get scene name but data was null.");
+            return null;
+        }
+
+        // otherwise, return that value from our data
+        return gameData.currentScene;
+    }
+
+    public Dictionary<string, GameData> GetAllProfilesGameData()
+    {
+        return dataHandler.LoadAllProfiles();
     }
 }

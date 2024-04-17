@@ -17,9 +17,9 @@ public class FileDataHandler
         this.useEncryption = useEncryption;
     }
 
-    public GameData Load()
+    public GameData Load(string profileId)
     {
-        string fullpath = Path.Combine(dataDirPath, dataFileName);
+        string fullpath = Path.Combine(dataDirPath,profileId, dataFileName);
 
         GameData loadedData = null;
 
@@ -52,9 +52,9 @@ public class FileDataHandler
         return loadedData;
     }
 
-    public void Save(GameData data)
+    public void Save(GameData data, string profileId)
     {
-        string fullpath = Path.Combine(dataDirPath, dataFileName);
+        string fullpath = Path.Combine(dataDirPath ,profileId, dataFileName);
 
         try
         {
@@ -79,6 +79,37 @@ public class FileDataHandler
         {
             Debug.LogError("Error saving data: " + fullpath + "\n" + e);
         }
+    }
+
+    public Dictionary<string, GameData> LoadAllProfiles() 
+    {
+        Dictionary<string, GameData> profileDictionary = new Dictionary<string, GameData>();
+
+        IEnumerable<DirectoryInfo> dirInfos = new DirectoryInfo(dataDirPath).EnumerateDirectories();
+        foreach ( DirectoryInfo dirInfo in dirInfos)
+        {
+            string profileId = dirInfo.Name;
+
+            string fullpath = Path.Combine(dataDirPath, profileId, dataFileName);
+            if (!File.Exists(fullpath))
+            {
+                Debug.LogWarning("No data file found for profile: " + profileId);
+                continue;
+            }
+            
+            GameData profileData = Load(profileId);
+
+            if (profileData != null)
+            {
+                profileDictionary.Add(profileId, profileData);
+            } 
+            else
+            {
+                Debug.LogWarning("Tried to load data but something went wrong." + profileId);
+            }
+        }
+
+        return profileDictionary;
     }
 
     private string EncryptDecrypt(string data)
