@@ -16,6 +16,7 @@ public class DataPersistenceManager : MonoBehaviour
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
+    private PlayerController playerController;
     private string selectedProfileId = "test";
 
     public string currentScene;
@@ -52,6 +53,19 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
+        if (playerObject != null)
+        {
+            playerController = playerObject.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                // Debug.Log("PlayerController component found and assigned.");
+                LoadGame(); // Load game data after player controller is assigned
+            }
+
+        }
+
+
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         this.currentScene = SceneManager.GetActiveScene().name;
 
@@ -73,18 +87,11 @@ public class DataPersistenceManager : MonoBehaviour
     public void NewGame()
     {
         this.gameData = new GameData();
-        Debug.Log("New game created.");
     }
 
     public void LoadGame()
     {
         this.gameData = dataHandler.Load(selectedProfileId);
-
-        //         Debug.Log("Current Scene 1: " + this.currentScene);
-
-        // this.currentScene = this.gameData.currentScene;
-
-        // Debug.Log("Current Scene 2: " + this.currentScene);
 
         if (this.gameData == null && initializeDataIfNull)
         {
@@ -117,6 +124,7 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObject.SaveData(gameData);
         }
 
+
         if (!currentScene.Equals("Main Menu"))
         {
             this.gameData.currentScene = this.currentScene;
@@ -132,7 +140,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private List<IDataPersistence> FindAllDataPersistenceObjects()
     {
-        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
+        IEnumerable<IDataPersistence> dataPersistenceObjects = FindObjectsOfType<MonoBehaviour>(true).OfType<IDataPersistence>();
 
         return new List<IDataPersistence>(dataPersistenceObjects);
     }

@@ -13,19 +13,25 @@ public class GameEventManager : MonoBehaviour
             Debug.LogError("Found more than one Game Events Manager in the scene.");
         }
         instance = this;
-    }
 
-
-
-    private void Start()
-    {
-        // Instantiate player object only if it doesn't exist in the scene
         if (GameObject.FindGameObjectWithTag("Player") == null && playerPrefab != null)
         {
             GameObject playerObject = Instantiate(playerPrefab);
             DontDestroyOnLoad(playerObject);
         }
     }
+
+
+
+    // private void Start()
+    // {
+    //     // Instantiate player object only if it doesn't exist in the scene
+    //     if (GameObject.FindGameObjectWithTag("Player") == null && playerPrefab != null)
+    //     {
+    //         GameObject playerObject = Instantiate(playerPrefab);
+    //         DontDestroyOnLoad(playerObject);
+    //     }
+    // }
 
     // Add other methods for managing scene transitions, saving/loading game data, etc.
 

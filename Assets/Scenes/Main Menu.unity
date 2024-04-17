@@ -1220,6 +1220,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1060406507051749195, guid: cb3f665e77aed40489d79e5b2ababb8c, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 1680817533966918453, guid: 44f82394e489e484ead6c5f735b59ba2, type: 3}
+    - target: {fileID: 1060406507051749195, guid: cb3f665e77aed40489d79e5b2ababb8c, type: 3}
       propertyPath: useEncryption
       value: 0
       objectReference: {fileID: 0}

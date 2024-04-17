@@ -9,6 +9,7 @@ public class SceneEntrance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Last scene: " + PlayerPrefs.GetString("LastScene"));
         if (PlayerPrefs.GetString("LastScene") == lastExitScene)
         {
             PlayerScript.instance.transform.position = transform.position;
