@@ -22,7 +22,13 @@ public class MainMenu : Menu
     }
     public void OnNewGameClicked()
     {
-        saveSlotsMenu.ActivateMenu();
+        saveSlotsMenu.ActivateMenu(false);
+        this.DeactivateMenu();
+    }
+  
+    public void OnLoadGameClicked()
+    {
+        saveSlotsMenu.ActivateMenu(true);
         this.DeactivateMenu();
     }
     public void OnContinueGame()

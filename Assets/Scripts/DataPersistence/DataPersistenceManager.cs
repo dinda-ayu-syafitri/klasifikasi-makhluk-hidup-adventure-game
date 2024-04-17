@@ -63,6 +63,13 @@ public class DataPersistenceManager : MonoBehaviour
         SaveGame();
     }
 
+    public void ChangeSelectedProfileId(string newProfileId)
+    {
+        this.selectedProfileId = newProfileId;
+
+        LoadGame();
+    }
+
     public void NewGame()
     {
         this.gameData = new GameData();
