@@ -20,4 +20,29 @@ public class GameData
         this.emblemItemCollected = new SerializableDictionary<string, bool>();
         this.currentScene = "Lobby";
     }
+
+    public int GetPercentageCompleted()
+    {
+        switch (currentScene)
+        {
+            case "Lobby":
+                return 0;
+            case "Lobby 1":
+                return 20;
+            case "Video Materi 1":
+                return 40;
+            case "Video Materi 2":
+                return 60;
+            case "Video Materi 3":
+                return 70;
+            case "Video Materi 4":
+                return 80;
+            case "Video Materi 5":
+                return 90;
+            case "Complete Scene":
+                return 100;
+            default:
+                return -1;
+        }
+    }
 }

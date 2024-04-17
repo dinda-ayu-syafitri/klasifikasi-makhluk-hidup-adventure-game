@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class MainMenu : Menu
 {
+    [Header("Menu Navigation")]
+    [SerializeField] private SaveSlotsMenu saveSlotsMenu;
+
     [Header("Menu Buttons")]
     [SerializeField] private Button newGameButton;
     [SerializeField] private Button continueButton;
@@ -19,9 +22,8 @@ public class MainMenu : MonoBehaviour
     }
     public void OnNewGameClicked()
     {
-        DisableMenuButtons();
-        DataPersistenceManager.instance.NewGame();
-        SceneManager.LoadSceneAsync("Lobby");
+        saveSlotsMenu.ActivateMenu();
+        this.DeactivateMenu();
     }
     public void OnContinueGame()
     {
@@ -35,5 +37,15 @@ public class MainMenu : MonoBehaviour
     {
         newGameButton.interactable = false;
         continueButton.interactable = false;
+    }
+
+    public void ActivateMenu()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public void DeactivateMenu()
+    {
+        this.gameObject.SetActive(false);
     }
 }

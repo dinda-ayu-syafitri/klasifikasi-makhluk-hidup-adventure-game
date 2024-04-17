@@ -16,6 +16,8 @@ public class DataPersistenceManager : MonoBehaviour
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler dataHandler;
 
+    private string selectedProfileId = "test";
+
     public string currentScene;
 
 
@@ -51,7 +53,7 @@ public class DataPersistenceManager : MonoBehaviour
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
-                this.currentScene = SceneManager.GetActiveScene().name;
+        this.currentScene = SceneManager.GetActiveScene().name;
 
         LoadGame();
     }
@@ -69,12 +71,12 @@ public class DataPersistenceManager : MonoBehaviour
 
     public void LoadGame()
     {
-        this.gameData = dataHandler.Load();
+        this.gameData = dataHandler.Load(selectedProfileId);
 
         //         Debug.Log("Current Scene 1: " + this.currentScene);
 
         // this.currentScene = this.gameData.currentScene;
-    
+
         // Debug.Log("Current Scene 2: " + this.currentScene);
 
         if (this.gameData == null && initializeDataIfNull)
@@ -108,12 +110,12 @@ public class DataPersistenceManager : MonoBehaviour
             dataPersistenceObject.SaveData(gameData);
         }
 
-            if (!currentScene.Equals("Main Menu"))
+        if (!currentScene.Equals("Main Menu"))
         {
             this.gameData.currentScene = this.currentScene;
         }
 
-        dataHandler.Save(gameData);
+        dataHandler.Save(gameData, selectedProfileId);
     }
 
     private void OnApplicationQuit()
@@ -133,16 +135,21 @@ public class DataPersistenceManager : MonoBehaviour
         return gameData != null;
     }
 
-    public string GetSavedSceneName() 
-{
-    // error out and return null if we don't have any game data yet
-    if (gameData == null) 
+    public string GetSavedSceneName()
     {
-        Debug.LogError("Tried to get scene name but data was null.");
-        return null;
+        // error out and return null if we don't have any game data yet
+        if (gameData == null)
+        {
+            Debug.LogError("Tried to get scene name but data was null.");
+            return null;
+        }
+
+        // otherwise, return that value from our data
+        return gameData.currentScene;
     }
 
-    // otherwise, return that value from our data
-    return gameData.currentScene;
-}
+    public Dictionary<string, GameData> GetAllProfilesGameData()
+    {
+        return dataHandler.LoadAllProfiles();
+    }
 }
