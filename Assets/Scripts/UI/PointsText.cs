@@ -31,11 +31,13 @@ public class PointsText : MonoBehaviour, IDataPersistence
     void Start()
     {
         GameEventManager.instance.onEmblemCollected += OnEmblemCollected;
+        GameEventManager.instance.onFalseEmblemCollected += OnFalseEmblemCollected;
     }
 
     private void OnDestroy()
     {
         GameEventManager.instance.onEmblemCollected -= OnEmblemCollected;
+        GameEventManager.instance.onFalseEmblemCollected -= OnFalseEmblemCollected;
     }
 
     private void OnEmblemCollected()
@@ -44,6 +46,11 @@ public class PointsText : MonoBehaviour, IDataPersistence
         totalPoints += 100;
         // Debug.Log("Points: " + totalPoints);
         // Debug.Log("Emblems: " + emblemCollected);
+    }
+    private void OnFalseEmblemCollected()
+    {
+        totalPoints -= 100;
+        Debug.Log("FALSE EMBLEM COLLECTED! Points: " + totalPoints);
     }
     // Update is called once per frame
     void Update()

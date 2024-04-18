@@ -29,8 +29,6 @@ public class Emblem : MonoBehaviour, IDataPersistence
             gameData.emblemItemCollected.Remove(id);
         }
         gameData.emblemItemCollected.Add(id, collected);
-
-        Debug.Log("Emblem " + id + " saved as " + collected);
     }
    
    private void OnTriggerEnter(Collider other) {
