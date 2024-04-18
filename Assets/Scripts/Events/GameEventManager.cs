@@ -52,4 +52,12 @@ public class GameEventManager : MonoBehaviour
             onEmblemCollected();
         }
     }
+    public event Action onFalseEmblemCollected;
+    public void FalseEmblemCollected() 
+    {
+        if (onFalseEmblemCollected != null) 
+        {
+            onFalseEmblemCollected();
+        }
+    }
 }
