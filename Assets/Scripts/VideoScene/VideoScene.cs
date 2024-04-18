@@ -38,4 +38,5 @@ public class VideoScene : MonoBehaviour
         videoPlayer.Play();
         isPaused = false;
     }
+
 }
