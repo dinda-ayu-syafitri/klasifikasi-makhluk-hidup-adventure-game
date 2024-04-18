@@ -9,6 +9,8 @@ public class PointsText : MonoBehaviour, IDataPersistence
 
     private int emblemCollected = 0;
 
+    private int falseEmblemCollected = 0;
+
     private TextMeshProUGUI pointsText;
 
     private void Awake()
@@ -20,14 +22,15 @@ public class PointsText : MonoBehaviour, IDataPersistence
     {
         this.totalPoints = data.totalPoints;
         this.emblemCollected = data.emblemCollected;
+        this.falseEmblemCollected = data.falseEmblemCollected;
     }
 
     public void SaveData(GameData data)
     {
         data.totalPoints = this.totalPoints;
         data.emblemCollected = this.emblemCollected;
+        data.falseEmblemCollected = this.falseEmblemCollected;
     }
-    // Start is called before the first frame update
     void Start()
     {
         GameEventManager.instance.onEmblemCollected += OnEmblemCollected;
@@ -44,15 +47,12 @@ public class PointsText : MonoBehaviour, IDataPersistence
     {
         emblemCollected++;
         totalPoints += 100;
-        // Debug.Log("Points: " + totalPoints);
-        // Debug.Log("Emblems: " + emblemCollected);
     }
     private void OnFalseEmblemCollected()
     {
+        falseEmblemCollected++;
         totalPoints -= 100;
-        Debug.Log("FALSE EMBLEM COLLECTED! Points: " + totalPoints);
     }
-    // Update is called once per frame
     void Update()
     {
         pointsText.text = totalPoints.ToString();
