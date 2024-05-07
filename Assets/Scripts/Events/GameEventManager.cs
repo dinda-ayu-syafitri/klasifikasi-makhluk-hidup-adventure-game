@@ -60,4 +60,13 @@ public class GameEventManager : MonoBehaviour
             onFalseEmblemCollected();
         }
     }
+
+    public event Action onPowerUpCollected;
+    public void PowerUpCollected() 
+    {
+        if (onPowerUpCollected != null) 
+        {
+            onPowerUpCollected();
+        }
+    }
 }
