@@ -6,6 +6,7 @@ public class PowerUp : MonoBehaviour, IDataPersistence
 {
     [SerializeField] private string id;
     [ContextMenu("Generate GUID for ID")]
+
     private void GenerateGUID()
     {
         id = System.Guid.NewGuid().ToString();
@@ -16,6 +17,11 @@ public class PowerUp : MonoBehaviour, IDataPersistence
     private PlayerController playerController;
 
 
+    private void Start()
+    {
+        playerController = GameObject.FindObjectOfType<PlayerController>();
+
+    }
     public void LoadData(GameData gameData)
     {
         gameData.powerUpUsed.TryGetValue(id, out collected);
@@ -38,27 +44,35 @@ public class PowerUp : MonoBehaviour, IDataPersistence
     {
         if (!collected)
         {
+            StartCoroutine(ActivatePowerUp());
             CollectPowerUps();
-            Debug.Log("Power Up Collected");
-        }
-
-        GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
-        if (playerObject != null)
-        {
-                Debug.Log("Player Controller Found");
-            playerController = playerObject.GetComponent<PlayerController>();
-            if (playerController != null)
-            {
-                Debug.Log("Player Controller Found");
-            }
-
         }
     }
 
-    private void CollectPowerUps()
+    private IEnumerator ActivatePowerUp()
     {
         collected = true;
-        Destroy(gameObject);
+        playerController.playerSpeed = 10.0f;
+    GetComponent<Renderer>().enabled = false;
+
+
+        yield return new WaitForSeconds(10);
+
+        playerController.playerSpeed = 5.0f;
+        Debug.Log("POWER UP DEACTIVATED!");
         GameEventManager.instance.PowerUpCollected();
+
+        Destroy(gameObject); 
+
+
+    }
+
+
+    private void CollectPowerUps()
+    {
+        // collected = true;
+        // Destroy(gameObject);
+        // GameEventManager.instance.PowerUpCollected();
+        Debug.Log("POWER UP COLLECTED!");
     }
 }
