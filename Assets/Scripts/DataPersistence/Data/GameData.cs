@@ -12,6 +12,7 @@ public class GameData
     public Vector3 playerPosition;
     public SerializableDictionary<string, bool> emblemItemCollected;
     public SerializableDictionary<string, bool> falseEmblemItemCollected;
+    public SerializableDictionary<string, bool> powerUpUsed;
     public string currentScene;
     
     public GameData()
@@ -22,6 +23,7 @@ public class GameData
         this.currentScene = "Lobby";
         this.emblemItemCollected = new SerializableDictionary<string, bool>();
         this.falseEmblemItemCollected = new SerializableDictionary<string, bool>();
+        this.powerUpUsed = new SerializableDictionary<string, bool>();
         this.falseEmblemCollected = 0;
     }
 
