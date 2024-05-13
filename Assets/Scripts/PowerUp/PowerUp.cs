@@ -16,6 +16,7 @@ public class PowerUp : MonoBehaviour, IDataPersistence
     public GameObject playerPrefab;
     private PlayerController playerController;
 
+    private float remainingTime;
 
     private void Start()
     {
@@ -52,17 +53,24 @@ public class PowerUp : MonoBehaviour, IDataPersistence
     private IEnumerator ActivatePowerUp()
     {
         collected = true;
-        playerController.playerSpeed = 10.0f;
-    GetComponent<Renderer>().enabled = false;
+        remainingTime = 10;
+        GetComponent<Renderer>().enabled = false;
 
 
-        yield return new WaitForSeconds(10);
+        while (remainingTime > 0)
+        {
+            remainingTime -= Time.deltaTime;
+            playerController.playerSpeed = 10.0f;
+            yield return null;
+        }
+
+        // yield return new WaitForSeconds(10);
 
         playerController.playerSpeed = 5.0f;
         Debug.Log("POWER UP DEACTIVATED!");
         GameEventManager.instance.PowerUpCollected();
 
-        Destroy(gameObject); 
+        Destroy(gameObject);
 
 
     }
@@ -75,4 +83,10 @@ public class PowerUp : MonoBehaviour, IDataPersistence
         // GameEventManager.instance.PowerUpCollected();
         Debug.Log("POWER UP COLLECTED!");
     }
+
+    public float GetRemainingTime()
+    {
+        return remainingTime;
+    }
 }
+

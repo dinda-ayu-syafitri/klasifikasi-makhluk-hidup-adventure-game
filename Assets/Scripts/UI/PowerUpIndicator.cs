@@ -5,7 +5,6 @@ using TMPro;
 
 public class PowerUpIndicator : MonoBehaviour
 {
-    [SerializeField] private string PowerUpStatus = "No Power Up";
     private TextMeshProUGUI powerUpStatusText;
 
     private void Awake()
@@ -25,11 +24,18 @@ public class PowerUpIndicator : MonoBehaviour
 
     private void OnPowerUpCollected()
     {
-        PowerUpStatus = "Power Up Collected";
+        // PowerUpStatus = "Power Up Collected";
     }
+
     void Update()
     {
-        powerUpStatusText.text = PowerUpStatus;
+          PowerUp[] powerUps = FindObjectsOfType<PowerUp>(); // Find all instances of PowerUp
+        foreach (PowerUp powerUp in powerUps)
+        {
+            float remainingTime = powerUp.GetRemainingTime(); // Get the remaining time of each power-up
+            powerUpStatusText.text = "Remaining Time: " + remainingTime.ToString("F1"); // Display remaining time
+        }
+
     }
     }
 
