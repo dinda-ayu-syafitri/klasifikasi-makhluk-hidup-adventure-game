@@ -69,4 +69,13 @@ public class GameEventManager : MonoBehaviour
             onPowerUpCollected();
         }
     }
+
+    public event Action onTimeUp;
+    public void TimeUp()
+    {
+        if (onTimeUp != null)
+        {
+            onTimeUp();
+        }
+    }
 }
