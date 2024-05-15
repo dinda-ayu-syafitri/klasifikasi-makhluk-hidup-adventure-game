@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 1680817533966918453}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.85, y: 0, z: -6.88}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.29195395, y: 0.29195395, z: 0.29195395}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680817534754565922}
@@ -175,8 +175,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680817534326866932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.073, z: 0}
+  m_LocalScale: {x: 0.97348, y: 0.97348, z: 0.97348}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1680817533624833360}
@@ -292,7 +292,7 @@ CharacterController:
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
-  m_SkinWidth: 0.08
+  m_SkinWidth: 0.0001
   m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1680817534326866826
@@ -307,9 +307,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10930fc5be9040179529096a25586e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 5
-  jumpHeight: 1
-  gravityValue: -9.81
+  playerSpeed: 2.5
+  jumpHeight: 0.5
+  gravityValue: -10
   rotationSpeed: 5
 --- !u!1 &1680817534754565934
 GameObject:
@@ -338,7 +338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1680817534754565934}
   m_LocalRotation: {x: 0.05095558, y: -0.09806203, z: 0.005027666, w: 0.9938622}
-  m_LocalPosition: {x: 2.200861, y: 2.2238593, z: -4.142001}
+  m_LocalPosition: {x: 1.8169904, y: 2.210471, z: -6.3080673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -455,23 +455,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_BiasX
-      value: -0.00000008114963
+      value: -0.011999983
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_BiasY
-      value: -0.00000006236625
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_ScreenX
-      value: 0.26
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_ScreenY
-      value: 0.21
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
+      propertyPath: m_SoftZoneWidth
+      value: 0.19
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_CameraDistance
-      value: 4.42
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 635343910125633509, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
+      propertyPath: m_SoftZoneHeight
+      value: 1.27
       objectReference: {fileID: 0}
     - target: {fileID: 635343910125633511, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_AmplitudeGain
@@ -503,15 +511,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.200861
+      value: 1.8169904
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2238593
+      value: 2.210471
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.142001
+      value: -6.3080673
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -531,11 +539,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 5.87
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -11.66
       objectReference: {fileID: 0}
     - target: {fileID: 635343910473205323, guid: 3914d14cb7e154d6ebcfcf474e34bbcb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
