@@ -3,12 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class TimerSceneManager : MonoBehaviour
 {
-   void Start()
+    public GameObject restartModal;
+
+    void Start()
     {
         // Check if TimerManager.instance is not null before subscribing to events
         if (TimerManager.instance != null)
         {
-            TimerManager.instance.onTimeUp += RestartScene; // Subscribe to the onTimeUp event
+            TimerManager.instance.onTimeUp += showRestartModal; // Subscribe to the onTimeUp event
         }
         else
         {
@@ -21,12 +23,17 @@ public class TimerSceneManager : MonoBehaviour
         // Unsubscribe from events to prevent memory leaks
         if (TimerManager.instance != null)
         {
-            TimerManager.instance.onTimeUp -= RestartScene; // Unsubscribe from the onTimeUp event
+            TimerManager.instance.onTimeUp -= showRestartModal; // Unsubscribe from the onTimeUp event
         }
     }
 
-    void RestartScene()
+    void showRestartModal()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // Restart the scene
+        restartModal.gameObject.SetActive(true);
+    }
+
+    public void RestartScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
