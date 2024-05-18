@@ -39,7 +39,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData gameData)
     {
-        this.transform.localPosition = gameData.playerPosition;
+        Vector3 newPosition = new Vector3(gameData.playerPosition.x, 5f, gameData.playerPosition.z);
+        this.transform.localPosition = newPosition;
         Debug.Log("Player position loaded");
     }
 
