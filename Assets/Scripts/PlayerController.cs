@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         if (jumpAction.triggered && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
+            Debug.Log("Jump");
         }
 
         playerVelocity.y += gravityValue * Time.deltaTime;
