@@ -437,6 +437,10 @@ PrefabInstance:
       propertyPath: m_TargetCamera
       value: 
       objectReference: {fileID: 1111705751}
+    - target: {fileID: 7529612342415885006, guid: 014bbc4aa2d254f0b9b0086f8f10feae, type: 3}
+      propertyPath: nextScene
+      value: 3 - Area Monera
+      objectReference: {fileID: 0}
     - target: {fileID: 7529612343253928741, guid: 014bbc4aa2d254f0b9b0086f8f10feae, type: 3}
       propertyPath: m_Name
       value: VideoPlayerObject
