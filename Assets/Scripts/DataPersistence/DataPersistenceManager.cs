@@ -125,7 +125,7 @@ public class DataPersistenceManager : MonoBehaviour
         }
 
 
-        if (!currentScene.Equals("Main Menu"))
+        if (!currentScene.Equals("0 - Main Menu"))
         {
             this.gameData.currentScene = this.currentScene;
         }

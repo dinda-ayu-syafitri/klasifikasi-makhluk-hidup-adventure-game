@@ -20,7 +20,7 @@ public class GameData
         this.totalPoints = 0;
         this.emblemCollected = 0;
         this.playerPosition = new Vector3(10.53f, 1.1f, -14.79515f);
-        this.currentScene = "1 - Lobby";
+        this.currentScene = "Lobby";
         this.emblemItemCollected = new SerializableDictionary<string, bool>();
         this.falseEmblemItemCollected = new SerializableDictionary<string, bool>();
         this.powerUpUsed = new SerializableDictionary<string, bool>();
@@ -31,7 +31,7 @@ public class GameData
     {
         switch (currentScene)
         {
-            case "1 - Lobby":
+            case "Lobby":
                 return 0;
             case "Lobby 1":
                 return 20;
