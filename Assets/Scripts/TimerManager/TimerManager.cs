@@ -5,11 +5,9 @@ public class TimerManager : MonoBehaviour
 {
     public static TimerManager instance;
 
-    public float totalTime = 10.0f; // Total time for the level in seconds
-    private float currentTime; // Current time left in the level
-
-    public event Action onTimeUp; // Event triggered when time runs out
-
+    public float totalTime = 10.0f; 
+    private float currentTime;
+    public event Action onTimeUp; 
     private void Awake()
     {
         if (instance != null)
