@@ -22,6 +22,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     private InputAction moveAction;
     private InputAction jumpAction;
 
+    private Animator animator;
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         cameraTransform = Camera.main.transform;
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
+        animator = GetComponentInChildren<Animator>();
     }
 
     public void LoadData(GameData gameData)
@@ -46,6 +49,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     void Update()
     {
+
+
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
         {
@@ -58,7 +63,6 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         move.y = 0f;
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        // Changes the height position of the player..
         if (jumpAction.triggered && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
@@ -67,6 +71,10 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
+
+        bool isMoving = input.magnitude > 0;
+
+        animator.SetBool("isMove", isMoving);
 
         // Rotate the player to the direction of movement
         float targetAngle = cameraTransform.eulerAngles.y;
