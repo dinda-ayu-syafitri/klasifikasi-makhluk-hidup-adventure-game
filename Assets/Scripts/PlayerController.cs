@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     private Animator animator;
 
+    public bool canMove = true;
+
+
     private void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -47,9 +50,13 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         Debug.Log("Player Local Postition: " + this.transform.localPosition);
     }
 
-    void Update()
+    private void Update()
     {
-
+        if (!canMove)
+        {
+            // If the player can't move, just return early from Update
+            return;
+        }
 
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -81,4 +88,12 @@ public class PlayerController : MonoBehaviour, IDataPersistence
         Quaternion rotation = Quaternion.Euler(0, targetAngle, 0);
         transform.rotation = Quaternion.Lerp(transform.rotation, rotation, rotationSpeed * Time.deltaTime);
     }
+
+    public void FreezePlayer()
+    {
+        canMove = false;
+        animator.SetBool("isMove", false);  // Ensure the animation stops
+        playerVelocity = Vector3.zero;  // Stop any residual velocity
+    }
+
 }

@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class TimerSceneManager : MonoBehaviour
 {
     public GameObject restartModal;
+    private PlayerController playerController;
 
     void Start()
     {
@@ -15,6 +16,12 @@ public class TimerSceneManager : MonoBehaviour
         else
         {
             Debug.LogError("TimerManager instance is null.");
+        }
+
+        playerController = FindObjectOfType<PlayerController>();
+        if (playerController == null)
+        {
+            Debug.LogError("PlayerController not found in the scene.");
         }
     }
 
@@ -29,11 +36,18 @@ public class TimerSceneManager : MonoBehaviour
 
     void showRestartModal()
     {
+        if (playerController != null)
+        {
+            playerController.FreezePlayer(); // Freeze the player
+        }
+
         restartModal.gameObject.SetActive(true);
     }
 
     public void RestartScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        playerController.canMove = true; // Allow the player to move again
     }
 }
