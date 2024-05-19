@@ -208,6 +208,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (4)
@@ -222,7 +230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.2
+      value: -6.37
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -261,6 +269,10 @@ PrefabInstance:
       value: c77e7f8f-9635-4848-aca5-59596d29f71a
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 125d4d2a6eb6f4de1a57891d7e8b86a1, type: 3}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Lumbricina
       objectReference: {fileID: 0}
@@ -273,6 +285,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (5)
@@ -287,7 +307,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.1
+      value: -3.39
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -326,6 +346,10 @@ PrefabInstance:
       value: 994c2a1a-520a-42d6-b0b0-83b3b9904067
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 784b63be2930f4975914430dca0448b2, type: 3}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Cyprinus carpio
       objectReference: {fileID: 0}
@@ -338,6 +362,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (10)
@@ -390,6 +422,10 @@ PrefabInstance:
       propertyPath: id
       value: 5e3da3e9-00dd-4d41-9fb3-e5863bdc2690
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 7a5de4de695d84994bb18597a91cd78b, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Perna viridis
@@ -2174,7 +2210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.7
+      value: -4.41
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2216,6 +2252,10 @@ PrefabInstance:
       propertyPath: id
       value: 06825d80-d563-4ff2-b999-eed64d02d0cb
       objectReference: {fileID: 0}
+    - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 83e46aa54aa5849f8968d9c2b06e587c, type: 3}
     - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: organismName
       value: Volvariella volvacea
@@ -5395,6 +5435,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem
@@ -5409,7 +5457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5450,7 +5498,7 @@ PrefabInstance:
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: emblemImage
       value: 
-      objectReference: {fileID: 21300000, guid: 22867adc12af045de96378ede37fb89a, type: 3}
+      objectReference: {fileID: 21300000, guid: 0a0131a800d564780981bca16335f018, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Spongilla
@@ -5617,6 +5665,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (7)
@@ -5631,7 +5687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.1
+      value: -4.87
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5669,6 +5725,10 @@ PrefabInstance:
       propertyPath: id
       value: a905c0eb-33be-4901-a783-a463b2cc6eeb
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 489c388a840db41c5a639c5358f4d7e4, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Crocodylus porosus
@@ -5892,6 +5952,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (6)
@@ -5906,7 +5974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.0860705
+      value: -6.38
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5944,6 +6012,10 @@ PrefabInstance:
       propertyPath: id
       value: 857a1220-0f72-48e7-b82c-1ae9aa2d147b
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: e0a9e73c12e5a451f974b8dbcd4ce158, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Rana hosii
@@ -6305,6 +6377,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (8)
@@ -6319,7 +6399,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.7
+      value: -4.22
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6358,6 +6438,10 @@ PrefabInstance:
       value: 8cc0c3da-09b8-4cdb-8954-32ab0ffafe27
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 55562e80c534a4feab41ef6e6ad9bda0, type: 3}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Chiroptera
       objectReference: {fileID: 0}
@@ -6370,6 +6454,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (9)
@@ -6384,7 +6476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.99
+      value: -7.21
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6425,7 +6517,7 @@ PrefabInstance:
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: emblemImage
       value: 
-      objectReference: {fileID: 21300000, guid: 22867adc12af045de96378ede37fb89a, type: 3}
+      objectReference: {fileID: 21300000, guid: 53b5daec16f5646f4a554850569dd5e1, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Columba livia
@@ -6919,7 +7011,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6961,6 +7053,10 @@ PrefabInstance:
       propertyPath: id
       value: 8aee1160-c641-4f9e-b66c-0948575f67c6
       objectReference: {fileID: 0}
+    - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 16c2d66fe25a3460489806c77cee8f0c, type: 3}
     - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: organismName
       value: Salmonella typhosa
@@ -7208,6 +7304,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (3)
@@ -7222,7 +7326,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.23
+      value: -5.77
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7260,6 +7364,10 @@ PrefabInstance:
       propertyPath: id
       value: 50c0b106-44c1-464b-a6f6-bea8d703ceca
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: c93d845bb4f1a4a1a8414d0a2c89218e, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Ascaris lumbricoides
@@ -7623,7 +7731,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.7
+      value: -4.87
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7666,8 +7774,12 @@ PrefabInstance:
       value: 29e18946-6eab-467c-90d6-910798d136e5
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 40a447a69371844ddbd19104fc50d5ea, type: 3}
+    - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: organismName
-      value: Neurospora crassa
+      value: 'Penicillium notatum '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
@@ -7952,6 +8064,10 @@ PrefabInstance:
       value: fa52cb73-c6ed-48e1-9406-29b590d9ad43
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 30b101a6578e14d08b28e4131696622c, type: 3}
+    - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: organismName
       value: Sargassum
       objectReference: {fileID: 0}
@@ -8042,6 +8158,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (1)
@@ -8056,7 +8180,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.2
+      value: -5.97
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8094,6 +8218,10 @@ PrefabInstance:
       propertyPath: id
       value: 166b7f3b-b0c9-4d68-939c-0862ac2a59eb
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 83f1fe0b7ff374d439bff75b19f0a6a6, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Schypozoa
@@ -8695,7 +8823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.5
+      value: -4.52
       objectReference: {fileID: 0}
     - target: {fileID: 1655912810085127714, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8737,6 +8865,10 @@ PrefabInstance:
       propertyPath: id
       value: 2a527c3d-027f-4d85-a7f0-96b13ddcda14
       objectReference: {fileID: 0}
+    - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 76059225ee7d142cc87bbabe11f90f73, type: 3}
     - target: {fileID: 1655912810085127900, guid: f0d1e81bb854f477baadf591bd016e8e, type: 3}
       propertyPath: organismName
       value: Psilotum nudum
@@ -11164,6 +11296,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 371025425013156986, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
     - target: {fileID: 2561036277562872368, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_Name
       value: Emblem (2)
@@ -11178,7 +11318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -5.12
       objectReference: {fileID: 0}
     - target: {fileID: 2561036277562872380, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11216,6 +11356,10 @@ PrefabInstance:
       propertyPath: id
       value: d3195aee-8595-45e4-979a-621a8fd3254c
       objectReference: {fileID: 0}
+    - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
+      propertyPath: emblemImage
+      value: 
+      objectReference: {fileID: 21300000, guid: 07e7aef6fa96b46218764f653135f5d0, type: 3}
     - target: {fileID: 2561036277562872383, guid: 60960ae79a1684663bb98fe210e13563, type: 3}
       propertyPath: organismName
       value: Fasciola hepatica
