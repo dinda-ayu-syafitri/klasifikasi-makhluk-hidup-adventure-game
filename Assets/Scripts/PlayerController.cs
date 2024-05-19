@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour, IDataPersistence
 
     public void LoadData(GameData gameData)
     {
-        Vector3 newPosition = new Vector3(gameData.playerPosition.x, 5f, gameData.playerPosition.z);
+        Vector3 newPosition = new Vector3(gameData.playerPosition.x, 10f, gameData.playerPosition.z);
         this.transform.localPosition = newPosition;
         Debug.Log("Player position loaded");
     }
@@ -93,8 +93,8 @@ public class PlayerController : MonoBehaviour, IDataPersistence
     public void FreezePlayer()
     {
         canMove = false;
-        animator.SetBool("isMove", false);  // Ensure the animation stops
-        playerVelocity = Vector3.zero;  // Stop any residual velocity
+        animator.SetBool("isMove", false);  
+        playerVelocity = Vector3.zero; 
     }
 
 }
