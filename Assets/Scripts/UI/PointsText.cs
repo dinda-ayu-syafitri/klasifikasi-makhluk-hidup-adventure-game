@@ -11,6 +11,8 @@ public class PointsText : MonoBehaviour, IDataPersistence
 
     private int falseEmblemCollected = 0;
 
+    public int currentScenePoints = 0;
+
     private TextMeshProUGUI pointsText;
 
     private void Awake()
@@ -23,6 +25,7 @@ public class PointsText : MonoBehaviour, IDataPersistence
         this.totalPoints = data.totalPoints;
         this.emblemCollected = data.emblemCollected;
         this.falseEmblemCollected = data.falseEmblemCollected;
+        
     }
 
     public void SaveData(GameData data)
@@ -30,6 +33,8 @@ public class PointsText : MonoBehaviour, IDataPersistence
         data.totalPoints = this.totalPoints;
         data.emblemCollected = this.emblemCollected;
         data.falseEmblemCollected = this.falseEmblemCollected;
+        // Debug.Log("Current Scene Points: " + currentScenePoints);
+
     }
     void Start()
     {
@@ -47,11 +52,13 @@ public class PointsText : MonoBehaviour, IDataPersistence
     {
         emblemCollected++;
         totalPoints += 100;
+        currentScenePoints += 100;
     }
     private void OnFalseEmblemCollected()
     {
         falseEmblemCollected++;
         totalPoints -= 100;
+        currentScenePoints -= 100;
     }
     void Update()
     {

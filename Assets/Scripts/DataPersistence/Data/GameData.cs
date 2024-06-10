@@ -9,12 +9,13 @@ public class GameData
     public int totalPoints;
     public int emblemCollected;
     public int falseEmblemCollected;
+    public int currentScenePoints;
     public Vector3 playerPosition;
     public SerializableDictionary<string, bool> emblemItemCollected;
     public SerializableDictionary<string, bool> falseEmblemItemCollected;
     public SerializableDictionary<string, bool> powerUpUsed;
     public string currentScene;
-    
+
     public GameData()
     {
         this.totalPoints = 0;
@@ -25,6 +26,7 @@ public class GameData
         this.falseEmblemItemCollected = new SerializableDictionary<string, bool>();
         this.powerUpUsed = new SerializableDictionary<string, bool>();
         this.falseEmblemCollected = 0;
+        this.currentScenePoints = 0;
     }
 
     public int GetPercentageCompleted()
@@ -33,22 +35,32 @@ public class GameData
         {
             case "1 - Lobby":
                 return 0;
-            case "Lobby 1":
+            case "2 - Video Animalia":
+                return 0;
+            case "3 - Area Animalia":
+                return 10;
+            case "4 - Video Plantae":
                 return 20;
-            case "Video Materi 1":
+            case "5 - Area Plantae":
+                return 30;
+            case "6 - Video Fungi":
                 return 40;
-            case "Video Materi 2":
+            case "7 - Area Fungi":
+                return 50;
+            case "8 - Video Protista":
                 return 60;
-            case "Video Materi 3":
+            case "9 - Area Protista":
                 return 70;
-            case "Video Materi 4":
+            case "10 - Video Monera":
                 return 80;
-            case "Video Materi 5":
+            case "11 - Area Monera":
                 return 90;
-            case "Complete Scene":
+            case "12 - Outro":
+                return 100;
+            case "13 - Game Over":
                 return 100;
             default:
-                return -1;
+                return 0;
         }
     }
 }

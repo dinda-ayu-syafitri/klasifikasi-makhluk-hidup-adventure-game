@@ -48,7 +48,7 @@ EditorBuildSettings:
     path: Assets/Scenes/12 - Outro.unity
     guid: e756b79f30ea647b5a42e5861195cfa1
   - enabled: 1
-    path: Assets/Scenes/13 - Game Over Scene.unity
+    path: Assets/Scenes/13 - Game Over.unity
     guid: bdad3b0b905a046b590cc25dba6daf0a
   - enabled: 1
     path: Assets/Scenes/Test Scene/Lobby.unity

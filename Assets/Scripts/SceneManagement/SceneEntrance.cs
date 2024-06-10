@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 public class SceneEntrance : MonoBehaviour
 {
     public string lastExitScene;
+    public GameData gameData;
     // Start is called before the first frame update
     void Start()
     {
+        gameData.currentScenePoints = 0;
         Debug.Log("Last scene: " + PlayerPrefs.GetString("LastScene"));
         if (PlayerPrefs.GetString("LastScene") == lastExitScene)
         {

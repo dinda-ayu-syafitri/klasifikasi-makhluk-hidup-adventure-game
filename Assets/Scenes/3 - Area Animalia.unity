@@ -5076,6 +5076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalPoints: 0
+  currentScenePoints: 0
 --- !u!114 &921078837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8476,6 +8477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneToLoad: 4 - Video Plantae
   lastExitScene: 
+  points: {fileID: 921078836}
 --- !u!1001 &1403206548
 PrefabInstance:
   m_ObjectHideFlags: 0
